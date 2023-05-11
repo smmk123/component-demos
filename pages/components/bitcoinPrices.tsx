@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import Image from "next/image";
 
 export default function BitcoinPrices(){
     const [data, setData] = useState<any>(null);
@@ -35,21 +37,31 @@ export default function BitcoinPrices(){
         <>
             
     <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-    <h2 className="text-xl font-bold mb-4">Exchange Rate Information:</h2>
+      <Image src="/images/bitcoin.png" width="200" height="100" alt="bitcoin"/>
     {data ? (
                     <><p>
-                        <span className="font-semibold">From Currency:</span> {data['Realtime Currency Exchange Rate']['1. From_Currency Code']} ({data['Realtime Currency Exchange Rate']['1. From_Currency Code']})
+                    <span className="font-semibold text-2xl text-blue-900">Exchange Rate:
+                    {parseFloat(data['Realtime Currency Exchange Rate']['5. Exchange Rate']).toFixed(2)} 
+                    ({data['Realtime Currency Exchange Rate']['3. To_Currency Code']}) 
+                    </span>
+                </p>
+                    <p>
+                        <span className="text-sm">From Currency:
+                        {data['Realtime Currency Exchange Rate']['1. From_Currency Code']} 
+                        ({data['Realtime Currency Exchange Rate']['1. From_Currency Code']})
+                        </span> 
                     </p><p>
-                            <span className="font-semibold">To Currency:</span> {data['Realtime Currency Exchange Rate']['4. To_Currency Name']} ({data['Realtime Currency Exchange Rate']['3. To_Currency Code']})
+                            <span className="text-sm">To Currency: 
+                            {data['Realtime Currency Exchange Rate']['4. To_Currency Name']} 
+                            ({data['Realtime Currency Exchange Rate']['3. To_Currency Code']})
+                            </span>
                         </p><p>
-                            <span className="font-semibold">Exchange Rate:</span> {data['Realtime Currency Exchange Rate']['5. Exchange Rate']}
-                        </p><p>
-                            <span className="font-semibold">Last Refreshed:</span> {data['Realtime Currency Exchange Rate']['6. Last Refreshed']} {data['Realtime Currency Exchange Rate']['7. Time Zone']}
-                        </p><p>
-                            <span className="font-semibold">Bid Price:</span> {data['Realtime Currency Exchange Rate']['8. Bid Price']}
-                        </p><p>
-                            <span className="font-semibold">Ask Price:</span> {data['Realtime Currency Exchange Rate']['9. Ask Price']}
-                        </p></>
+                            <span className="text-xs">Last Refreshed: 
+                            {data['Realtime Currency Exchange Rate']['6. Last Refreshed']} 
+                            {data['Realtime Currency Exchange Rate']['7. Time Zone']}
+                            </span>
+                        </p>
+                        </>
                     ) :  (<p>loading...</p>)}
 
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={fetchData}>Refresh Data</button>
