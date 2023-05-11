@@ -5,7 +5,7 @@
 This project is a demo page showcasing a component that utilizes the RapidAPI's API and includes a Bitcoind exchange component. It is built using Next.js, a React component framework, and utilizes Axios for making API requests and Tailwind CSS for styling.
 
 ## Features
-
+- Next.js Serverless Function: The website utilizes Next.js Serverless Functions to create a proxy that effectively hides the API key. This ensures that the API key is not exposed on the client-side and provides an additional layer of security.
 - Integration with RapidAPI's API: The component in this demo page interacts with RapidAPI's API to fetch data and display it.
 - Bitcoind Exchange Component: The demo page includes a Bitcoind exchange component that allows users to view and interact with Bitcoin exchange data.
 - Next.js Framework: The project is built using Next.js, a popular React component framework that offers server-side rendering, static site generation, and other performance optimizations.
