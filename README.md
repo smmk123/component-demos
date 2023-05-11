@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a demo page showcasing a component that utilizes the RapidAPI's API and includes a Bitcoind exchange component. It is built using Next.js, a React component framework, and utilizes Axios for making API requests and Tailwind CSS for styling.
+This project is a demo page showcasing a component that utilizes the RapidAPI's API and includes a Bitcoind exchange component. By interacting with the demos, users can get a better understanding of how these components work and how they can be integrated into their own projects. It is built using Next.js, a React component framework, and utilizes Axios for making API requests and Tailwind CSS for styling. Recharts, a powerful charting library, is utilized to create the Bitcoin price history chart. This chart allows users to explore the historical price data of Bitcoin in an interactive and visually appealing manner.
 
 ## Features
 - Next.js Serverless Function: The website utilizes Next.js Serverless Functions to create a proxy that effectively hides the API key. This ensures that the API key is not exposed on the client-side and provides an additional layer of security.
@@ -11,6 +11,7 @@ This project is a demo page showcasing a component that utilizes the RapidAPI's 
 - Next.js Framework: The project is built using Next.js, a popular React component framework that offers server-side rendering, static site generation, and other performance optimizations.
 - Axios: Axios is used for making API requests to the RapidAPI's API, providing a simple and efficient way to fetch data.
 - Tailwind CSS: The project utilizes Tailwind CSS for easy and responsive styling of the components.
+- Recharts: Recharts is used to create the Bitcoin price history chart, allowing users to visualize the historical data in an interactive and intuitive manner.
 
 ## Installation
 
@@ -38,6 +39,11 @@ npm install
 
 ```plaintext
 RAPIDAPI_KEY=your-rapidapi-key
+```
+The project requires an API key from CoinAPI.co to access the Bitcoin price data. If you don't have one, you can sign up at [CoinAPI.co](https://www.coinapi.io/) and obtain an API key. The API key should be added to the `.env` file in the project root as follows:
+
+```plaintext
+COINAPI_KEY=your-coinapi-key
 ```
 
 5. Start the development server:
@@ -72,3 +78,4 @@ This project is licensed under the [MIT License](LICENSE).
 - [Next.js](https://nextjs.org/) for the React component framework.
 - [Axios](https://axios-http.com/) for making API requests.
 - [Tailwind CSS](https://tailwindcss.com/) for the responsive styling.
+- [Recharts](https://recharts.org/) for creating the Bitcoin price history chart.
