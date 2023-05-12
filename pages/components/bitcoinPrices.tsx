@@ -36,7 +36,7 @@ export default function BitcoinPrices(){
     return(
         <>
             
-    <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+    <div className="bg-gray-100 rounded-lg p-6 shadow-md min-w-20 m-10">
       <Image src="/images/bitcoin.png" width="200" height="100" alt="bitcoin"/>
     {data ? (
                     <><p>
