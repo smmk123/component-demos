@@ -3,19 +3,24 @@ import React from 'react';
 
 const BloombergArrayFilter = (props: any) => {
     const modules = props.data.modules;
-    let nonEmptyStories: any[] = [];
+    const nonEmptyStories = modules
+    .map((module :any) => module.stories)
+    .filter((stories:any) => stories.length > 0);
+
+  const allStories = nonEmptyStories.flat();
+
+  const uniqueStories = allStories.reduce((acc: any, story: any) => {
+    if (!acc.find((s: any) => s.id === story.id)) {
+      acc.push(story);
+    }
+    return acc;
+  }, []);
   
-    modules.forEach((module: { stories: any }) => {
-      if (module.stories && module.stories.length > 0) {
-        nonEmptyStories = nonEmptyStories.concat(module.stories);
-      }
-    });
-  
-    const limitedStories = nonEmptyStories.slice(0, 10);
+    const limitedStories = uniqueStories.slice(0, 10);
   
     return (
       <div>
-        {limitedStories.map((story) => (
+        {modules && limitedStories.map((story: any) => (
           <div className="m-2" key={story.id}>
             <h2 className="text-xl font-bold">{story.title}</h2>
             <p>{story.summary}</p>

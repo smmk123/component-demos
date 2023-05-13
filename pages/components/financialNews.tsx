@@ -33,16 +33,15 @@ export default function FinancialNews(){
         <>
         <div className="bg-gray-100 rounded-lg p-6 shadow-md m-10 m-w-[50%] basis-1/4">
             <h1 className="text-2xl">Tesla News Ticker:</h1>
-            <p className="p-2">
-            {data && data.slice(0, 5).map((article: any)=>(
-                <div className="p-1" key={article.id}>
+            {data && data.slice(0, 5).map((article: any, index: number)=>(
+                <div className="p-1 m-2" key={index}>
                 <p className="text-l font-bold">{article.Title}</p>
                 <p>{article.Authors[0].name}</p>
                 <p>{new Date(parseInt(article.PublishDateUTC)).toLocaleDateString()}</p>
                 <p>{article.Content.Deck}</p>
                 </div>
             ))}
-            </p>
+            
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={fetchData}>Refresh Data</button>
         </div>
         </>
