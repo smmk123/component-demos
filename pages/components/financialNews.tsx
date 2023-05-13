@@ -31,8 +31,8 @@ export default function FinancialNews(){
 
     return(
         <>
-        <div className="bg-gray-100 rounded-lg p-6 shadow-md m-10 m-w-[50%] basis-1/2">
-            <h1 className="text-2xl">Financial News Ticker:</h1>
+        <div className="bg-gray-100 rounded-lg p-6 shadow-md m-10 m-w-[50%] basis-1/4">
+            <h1 className="text-2xl">Tesla News Ticker:</h1>
             <p className="p-2">
             {data && data.slice(0, 5).map((article: any)=>(
                 <div className="p-1" key={article.id}>

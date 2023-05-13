@@ -57,8 +57,8 @@ export default function BitcoinPriceHistory(){
       );
 
       const renderChartOrLoading = () => {
-        if (renderLineChart === null) {
-          return <p>Loading...</p>;
+        if (data === null) {
+          return <p>Loading Chart...</p>;
         } else {
           return renderLineChart;
         }
@@ -66,10 +66,10 @@ export default function BitcoinPriceHistory(){
 
     return(
         <>
-        {/* {parsedDataArray ? (<pre>{JSON.stringify(parsedDataArray, null, 2)}</pre>) : (<p>parse failed</p>)} */}
         <div className="bg-gray-100 rounded-lg p-6 shadow-md">
             <p className="text-2xl">Bitcoin Price History</p>
-            {renderChartOrLoading()}
+            {data ? renderChartOrLoading() : <span>loading...</span>}
+            {/* {data && <pre>{JSON.stringify(data, null, 2)}</pre>} */}
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={fetchData}>Refresh Data</button>
       </div>
         </>);}

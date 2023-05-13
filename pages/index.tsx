@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import BitcoinPrices from './components/bitcoinPrices';
 import BitcoinPriceHistory from './components/bitcoinPricehistory';
 import FinancialNews from './components/financialNews';
+import BloombergNews from './components/bloombergNews';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,6 +13,7 @@ export default function Home() {
     >
 <BitcoinPrices />
 <BitcoinPriceHistory />
+<BloombergNews />
 <FinancialNews />
     </main>
   )
